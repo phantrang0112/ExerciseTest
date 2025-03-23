@@ -39,5 +39,4 @@ public class SavingsAccount extends BankAccount implements Transaction {
     }
 
 
-
 }
