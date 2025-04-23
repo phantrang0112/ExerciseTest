@@ -24,16 +24,20 @@ public class CheckoutTests {
 
     // Test Case 1: Complete checkout process
     @Test
-    public void testCheckoutSuccess() {
+    public void testCheckoutSuccess() throws InterruptedException {
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         driver.findElement(By.className("shopping_cart_link")).click();
         driver.findElement(By.id("checkout")).click();
         driver.findElement(By.id("first-name")).sendKeys("Trang");
+        Thread.sleep(6000);
         driver.findElement(By.id("last-name")).sendKeys("Phan");
+        Thread.sleep(6000);
         driver.findElement(By.id("postal-code")).sendKeys("70000");
+        Thread.sleep(6000);
         driver.findElement(By.id("continue")).click();
+        Thread.sleep(6000);
         driver.findElement(By.id("finish")).click();
-
+        Thread.sleep(6000);
         WebElement successMessage = driver.findElement(By.className("complete-header"));
         assertEquals("Thank you for your order!", successMessage.getText());
     }
